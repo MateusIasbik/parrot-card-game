@@ -142,7 +142,7 @@ function showCards() {
 function numberCards() {
 
     while (isNaN(numberSelected) || numberSelected < 4 || numberSelected > 14 || numberSelected % 2 === 1) {
-        numberSelected = Number(prompt("Com quantas cartas quer jogar?"));
+        numberSelected = Number(prompt("Com quantas cartas pares, entre 4 a 14, quer jogar?"));
     }
 
     return numberSelected;
