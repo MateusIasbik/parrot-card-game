@@ -23,6 +23,7 @@ let timerInterval;
 function finishGame() {
     if ( numberSelected / 2 === score) {
         alert(`Você ganhou em ${moves} jogadas!`)
+        location.reload();
         clearInterval(timerInterval);
     }
 }
