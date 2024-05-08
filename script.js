@@ -12,6 +12,14 @@ const backCards = [
 
 let deckCards = [];
 
+let cardOne = "";
+let cardTwo = "";
+
+let clickCount = 0;
+let firstCardId = "";
+let secondCardId = "";
+let score = 0;
+let moves = 0;
 
 function createDeck() {
     for (let i = 0; i < numberSelected / 2; i++) {
@@ -19,31 +27,79 @@ function createDeck() {
         deckCards.push(backCards[i]);
     }
 
-    deckCards.sort(comparador); 
+    deckCards.sort(comparador);
 
-
-// Esta função pode ficar separada do código acima, onde você preferir
-function comparador() { 
-	return Math.random() - 0.5; 
+    function comparador() {
+        return Math.random() - 0.5;
+    }
 }
 
+function differentCards(cardClicked) {
+    let templateCard = `
+    <img src="Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" alt="Parrot card">
+    `;
+    cardClicked.innerHTML = templateCard;
+}
+
+function matchingCards(cardClicked) {
+
+}
+
+function compareCards(){
+    if (firstCardId !== "" && secondCardId !== ""){
+        if (firstCardId !== secondCardId) {
+            differentCards(cardOne);
+            differentCards(cardTwo);
+            cardOne.classList.toggle("back");
+            cardTwo.classList.toggle("back");
+        }
+        
+        else if (firstCardId === secondCardId){
+            alert("são iguais!");
+            score++;
+        }
+        
+        clickCount = 0;
+        firstCardId = "";
+        secondCardId = "";
+    } 
 }
 
 function clickedCard(cardClicked) {
+
+    if (clickCount >= 2) {
+        return;
+    }
+
     cardClicked.classList.toggle("back");
-    
-    let cardName = cardClicked.id;
-    console.log(cardName);
 
     if (!cardClicked.classList.contains("back")) {
+        let cardName = cardClicked.id;
         
-        let templateCard = `
-            <img src="Arquivos Úteis - Projeto 04 - Parrot Card Game/${cardName}.gif" alt="${cardName}">
-            `;
-        cardClicked.innerHTML = templateCard;
-
+        if (clickCount === 0) {
+            firstCardId = cardName;
+            cardOne = cardClicked;
+        } else if (clickCount === 1) {
+            secondCardId = cardName;
+            cardTwo = cardClicked;
+            
+            setInterval(compareCards, 1000);
         }
+
+        clickCount++;  
+
+        let templateCard = `
+        <img src="Arquivos Úteis - Projeto 04 - Parrot Card Game/${cardName}.gif" alt="${cardName}">
+        `;
+        cardClicked.innerHTML = templateCard;
     } 
+
+    moves++;
+
+    console.log(cardOne);
+    console.log(cardTwo);
+
+}
 
 function showCards() {
     const ul = document.querySelector("ul");
