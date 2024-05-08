@@ -41,8 +41,11 @@ function differentCards(cardClicked) {
     cardClicked.innerHTML = templateCard;
 }
 
-function matchingCards(cardClicked) {
-
+function matchingCards(firstCard, secondCard){
+    firstCard.classList.add("disableCard");
+    secondCard.classList.add("disableCard");
+    cardOne = "";
+    cardTwo = "";
 }
 
 function compareCards(){
@@ -55,7 +58,7 @@ function compareCards(){
         }
         
         else if (firstCardId === secondCardId){
-            alert("são iguais!");
+            matchingCards(cardOne, cardTwo);
             score++;
         }
         

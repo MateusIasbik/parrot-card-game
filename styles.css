@@ -33,6 +33,10 @@ img {
     width: 100px;
 }
 
+.disableCard {
+    pointer-events: none;
+}
+
 li {
     width: 117px;
     height: 146px;
