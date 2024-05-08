@@ -20,6 +20,17 @@ let firstCardId = "";
 let secondCardId = "";
 let score = 0;
 let moves = 0;
+let clock = 0;
+
+
+
+function timer(){
+    clock++;
+    let seconds = document.querySelector(".clock p");
+    seconds.innerHTML = clock;
+}
+
+setInterval(timer, 1000);
 
 function createDeck() {
     for (let i = 0; i < numberSelected / 2; i++) {
