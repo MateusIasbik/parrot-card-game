@@ -82,8 +82,8 @@ function clickedCard(cardClicked) {
         } else if (clickCount === 1) {
             secondCardId = cardName;
             cardTwo = cardClicked;
-            
-            setInterval(compareCards, 1000);
+
+            setTimeout(compareCards, 1000);
         }
 
         clickCount++;  
