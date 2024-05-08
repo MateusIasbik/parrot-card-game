@@ -23,8 +23,16 @@ let timerInterval;
 function finishGame() {
     if ( numberSelected / 2 === score) {
         alert(`Você ganhou em ${moves} jogadas!`)
-        location.reload();
         clearInterval(timerInterval);
+
+        const refreshGame = window.confirm('Deseja jogar novamente?');
+
+        if (refreshGame) {
+            location.reload();
+        } else {
+            console.log('Usuário clicou em Cancelar');
+        }
+
     }
 }
 
