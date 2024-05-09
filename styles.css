@@ -6,15 +6,12 @@ body {
 }
 
 .container {
-    margin: 2px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
 h1 {
-    margin: 55px 1px 0 1px;
+    margin-top: 55px;
     color: #75B79E;
     font-size: 56px;
     font-weight: 700;
