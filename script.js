@@ -31,7 +31,7 @@ function finishGame() {
 
         if (refreshGame) {
             location.reload();
-        } 
+        }
     }
 }
 
@@ -69,6 +69,9 @@ function differentCardsOne() {
     <img src="Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" alt="Parrot card">
     `;
     cardOne.innerHTML = templateCard;
+
+    cardOne.classList.remove("disableCard");
+    cardTwo.classList.remove("disableCard");
 }
 
 function matchingCards(firstCard, secondCard) {
@@ -114,25 +117,27 @@ function clickedCard(cardClicked) {
     cardClicked.classList.toggle("back");
 
     if (!cardClicked.classList.contains("back")) {
+
         cardName = cardClicked.id;
+
+        cardClicked.classList.add("disableCard");
 
         if (clickCount === 0) {
             firstCardId = cardName;
             cardOne = cardClicked;
+
         } else if (clickCount === 1) {
             secondCardId = cardName;
             cardTwo = cardClicked;
 
             setTimeout(compareCards, 1000);
-        }
 
+        }
         clickCount++;
         setTimeout(changeCard, 220);
-         
     }
 
     moves++;
-
 }
 
 function showCards() {
