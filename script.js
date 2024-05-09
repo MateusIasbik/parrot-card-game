@@ -31,10 +31,7 @@ function finishGame() {
 
         if (refreshGame) {
             location.reload();
-        } else {
-            console.log('Usuário clicou em Cancelar');
-        }
-
+        } 
     }
 }
 
@@ -102,7 +99,6 @@ function compareCards() {
 }
 
 function changeCard() {
-    console.log(cardUsed);
     let templateCard = `
     <img src="Arquivos Úteis - Projeto 04 - Parrot Card Game/${cardName}.gif" alt="${cardName}">
     `;
