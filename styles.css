@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    margin: 40px 1px 0 1px;
+    margin: 55px 1px 0 1px;
     color: #75B79E;
     font-size: 56px;
     font-weight: 700;
@@ -49,7 +49,7 @@ h1 {
 ul {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 34px;
+    margin-top: 25px;
     justify-content: center;
     align-items: center;
 }
