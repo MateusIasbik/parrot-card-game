@@ -81,8 +81,8 @@ function matchingCards(firstCard, secondCard) {
 function compareCards() {
     if (firstCardId !== "" && secondCardId !== "") {
         if (firstCardId !== secondCardId) {
-            setTimeout(differentCardsOne, 250);
-            setTimeout(differentCardsTwo, 250);
+            setTimeout(differentCardsOne, 220);
+            setTimeout(differentCardsTwo, 220);
             cardOne.classList.toggle("back");
             cardTwo.classList.toggle("back");
         }
@@ -127,7 +127,7 @@ function clickedCard(cardClicked) {
         }
 
         clickCount++;
-        setTimeout(changeCard, 250);
+        setTimeout(changeCard, 220);
          
     }
 
