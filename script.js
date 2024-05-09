@@ -36,10 +36,12 @@ function finishGame() {
 }
 
 function timer() {
-    clock++;
-    let seconds = document.querySelector(".clock p");
-    seconds.innerHTML = clock;
-    finishGame();
+    if ( moves >= 1 ){
+        clock++;
+        let seconds = document.querySelector(".clock p");
+        seconds.innerHTML = clock;
+        finishGame();
+    }
 }
 
 timerInterval = setInterval(timer, 1000);
